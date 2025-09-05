@@ -7,7 +7,10 @@
   "type": "module",
   "main": "server.ts",
   "scripts": {
-    "start": "tsx src/server.ts"
+    "tsx:start": "tsx src/server.ts",
+    "tsx:watch": "tsx --watch src/server.ts",
+    "css:watch": "postcss --watch src/client/styles/tailwind.css -o public/styles.css --env production",
+    "css:build": "postcss src/client/styles/tailwind.css -o public/styles.css --env production"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -16,10 +19,15 @@
     "tsx": "^4.20.5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   }
 }

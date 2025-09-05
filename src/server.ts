@@ -6,6 +6,8 @@ const port = 3000
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static("public"));
+
 app.get("/", (_req, res) => {
   res.send(todoPage());
 });
