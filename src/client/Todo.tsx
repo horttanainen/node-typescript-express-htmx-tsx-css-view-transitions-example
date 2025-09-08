@@ -2,7 +2,7 @@
 export type Todo = { id: number; text: string };
 export function TodoView({ todo }: { todo: Todo }) {
   return (
-    <div id="main">
+    <div>
       <h2>Todo #{todo.id}</h2>
       <p><strong>ID:</strong> {todo.id}</p>
       <p><strong>Text:</strong> {todo.text}</p>
@@ -10,7 +10,7 @@ export function TodoView({ todo }: { todo: Todo }) {
       <button
         hx-get="/todos"
         hx-target="#main"
-        hx-swap="outerHTML"
+        hx-swap="innerHTML"
         hx-push-url="/todos"
         type="button"
       >

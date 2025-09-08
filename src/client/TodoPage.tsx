@@ -30,7 +30,9 @@ export function TodoPage({ todos }: Props) {
             </button>
           </form>
 
-          <TodoList todos={todos} />
+          <div id="main">
+            <TodoList todos={todos} />
+          </div>
         </div>
       </body>
     </html>

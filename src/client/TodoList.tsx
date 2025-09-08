@@ -13,7 +13,6 @@ export default function TodoList({ todos }: Props) {
     )
   }
   return (
-    <div id="main">
       <div id="todo-list">
         <ul>
           {
@@ -24,7 +23,7 @@ export default function TodoList({ todos }: Props) {
                 <button
                   hx-get={`/todos/${t.id}`}
                   hx-target="#main"
-                  hx-swap="outerHTML"
+                  hx-swap="innerHTML"
                   hx-push-url={`/todos/${t.id}`}
                   type="button"
                 >
@@ -43,7 +42,6 @@ export default function TodoList({ todos }: Props) {
             ))
           }
         </ul>
-      </div>
     </div>
   );
 }

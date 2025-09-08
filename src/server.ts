@@ -9,11 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (_req, res) => {
-  res.send(todoPage());
+  res.redirect("/todos")
 });
 
-app.get("/todos", (_req, res) => {
-  res.send(todoList());
+app.get("/todos", (req, res) => {
+  if (req.header("hx-request")) {
+    return res.send(todoList());
+  } 
+  res.send(todoPage());
 });
 
 app.post("/todos", (req, res) => {
